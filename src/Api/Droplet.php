@@ -48,7 +48,7 @@ class Droplet extends AbstractApi
      *
      * @return DropletEntity[]
      */
-    public function getAllByTag($tag = NULL)
+    public function getAllByTag($tag)
     {
         $url = sprintf('%s/droplets?tag_name=%d', $this->endpoint, $tag);
 
