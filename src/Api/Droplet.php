@@ -50,12 +50,7 @@ class Droplet extends AbstractApi
      */
     public function getAllByTag($tag)
     {
-        $url = sprintf('%s/droplets?tag_name=%d', $this->endpoint, $tag);
-
-        echo $url;
-        exit;
-
-        $droplets = $this->adapter->get($url);
+        $droplets = $this->adapter->get(sprintf('%s/droplets?tag_name=%s', $this->endpoint, $tag));
 
         $droplets = json_decode($droplets);
 
