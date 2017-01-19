@@ -30,9 +30,9 @@ class Droplet extends AbstractApi
 	 *
 	 * @return DropletEntity[]
 	 */
-    public function getAll($per_page = 200, $page = 1)
+    public function getAll($per_page = 200, $page = 1, $tag = '')
     {
-	    $droplets = $this->adapter->get(sprintf('%s/droplets?per_page=%d&page=%d', $this->endpoint, $per_page, $page));
+	    $droplets = $this->adapter->get(sprintf('%s/droplets?per_page=%d&page=%d&tag_name=%d', $this->endpoint, $per_page, $page, $tag));
 
         $droplets = json_decode($droplets);
 
